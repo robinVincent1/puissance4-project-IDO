@@ -8,3 +8,9 @@ class Grid:
         self.rows = rows
         self.columns = columns
         self.grid = [[" " for _ in range(columns)] for _ in range(rows)]
+
+    def display(self):
+        """Affiche la grille dans la console."""
+        for row in self.grid:
+            print("| " + " | ".join(row) + " |")
+        print("  " + "   ".join(map(str, range(1, self.columns + 1))))
