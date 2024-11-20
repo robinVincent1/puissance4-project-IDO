@@ -13,3 +13,11 @@ class VictoryChecker:
                 if all(cell == player for cell in row[col:col + 4]):
                     return True
         return False
+
+    def check_vertical(self, player):
+        """Check vertical victories"""
+        for col in range(len(self.grid[0])):
+            for row in range(len(self.grid) - 3):
+                if all(self.grid[row + i][col] == player for i in range(4)):
+                    return True
+        return False
