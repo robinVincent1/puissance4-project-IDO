@@ -14,3 +14,7 @@ class Grid:
         for row in self.grid:
             print("| " + " | ".join(row) + " |")
         print("  " + "   ".join(map(str, range(1, self.columns + 1))))
+
+    def reset(self):
+        """Réinitialise la grille en la rendant vide."""
+        self.grid = [[" " for _ in range(self.columns)] for _ in range(self.rows)]
