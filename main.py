@@ -1,7 +1,9 @@
 from grid import Grid
 
 if __name__ == "__main__":
-    # Initialiser une grille
+    # Initialiser la grille
     grid = Grid()
-    print("Grille créée avec succès.")
-    print(grid.grid)  # Affiche la représentation interne de la grille
+
+    # Afficher la grille
+    print("Grille affichée dans la console :")
+    grid.display()
