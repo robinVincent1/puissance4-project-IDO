@@ -8,4 +8,5 @@ class Game:
             if row[column] == " ":
                 row[column] = self.current_player
                 return True
+        print(f"La colonne {column + 1} est pleine. Essayez une autre colonne.")
         return False
