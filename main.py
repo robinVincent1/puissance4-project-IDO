@@ -1,20 +1,12 @@
 from grid import Grid
+from game_logic import Game
+from victory_conditions import VictoryChecker
+from interface import Interface
 
 if __name__ == "__main__":
-    # Initialiser la grille
     grid = Grid()
+    game = Game(grid)
+    checker = VictoryChecker(grid)
+    interface = Interface(game, checker)
 
-    # Afficher la grille initiale
-    print("Grille initiale :")
-    grid.display()
-
-    # Modifier manuellement la grille (pour simuler un jeu)
-    grid.grid[0][0] = "X"
-    grid.grid[1][1] = "O"
-    print("\nGrille modifiée :")
-    grid.display()
-
-    # Réinitialiser la grille
-    grid.reset()
-    print("\nGrille après réinitialisation :")
-    grid.display()
+    interface.run()
