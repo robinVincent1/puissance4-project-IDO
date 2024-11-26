@@ -33,3 +33,15 @@ class VictoryChecker:
                 if all(self.grid[row + i][col - i] == player for i in range(4)):
                     return True
         return False
+
+    def check_victory(self, player):
+        """
+        Vérifie si le joueur donné a une condition de victoire.
+        :param player: Jeton du joueur ("X" ou "O").
+        :return: True si le joueur a gagné, False sinon.
+        """
+        return (
+                self.check_horizontal(player) or
+                self.check_vertical(player) or
+                self.check_diagonal(player)
+        )
