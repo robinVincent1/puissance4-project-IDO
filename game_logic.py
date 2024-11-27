@@ -11,6 +11,7 @@ class Game:
         print(f"La colonne {column + 1} est pleine. Essayez une autre colonne.")
 
         return False
+
     def switch_player(self):
         self.current_player = "O" if self.current_player == "X" else "X"
 
