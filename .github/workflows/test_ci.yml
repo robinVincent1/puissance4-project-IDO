@@ -1,5 +1,18 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - dev
+  pull_request:
+    branches:
+      - main
+      - staging
+      - dev
+
 jobs:
-  # Job 1 : Linting
   lint:
     name: Lint Code with flake8
     runs-on: ubuntu-latest
@@ -22,11 +35,11 @@ jobs:
         run: |
           flake8 . --max-line-length=88
 
-  # Job 2 : Testing (dépend de lint)
+
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
-    needs: lint  # Dépend de la réussite du job "lint"
+    needs: lint  
 
     steps:
       - name: Checkout code
